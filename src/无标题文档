@@ -1,0 +1,9 @@
+roslaunch racecar_gazebo racecar_runway.launch 启动地图
+
+roslaunch racecar_gazebo slam_gmapping.launch   建图
+rosrun map_server map_saver -f ~/test_ws/src/racecar_gazebo/map/map_runway  保存
+导航
+
+roslaunch racecar_gazebo racecar_runway_navigation.launch
+roslaunch racecar_gazebo racecar_rviz.launch
+rosrun racecar_gazebo path_pursuit.py 

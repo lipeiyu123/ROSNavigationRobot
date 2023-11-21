@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <arg name="use_rviz" default="false" />
+
+    <!-- ODOMETRY -->
+    <!--rf2o_Laser_Odometry-->
+    <include file="$(find racecar_gazebo)/launch/rf2o.launch.xml" />
+
+     <!-- Robot_Localization -->
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se" clear_params="true">
+        <rosparam command="load" file="$(find racecar_gazebo)/param/ekf_params.yaml" />
+    </node>
+</launch>
+
